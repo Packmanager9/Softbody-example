@@ -276,7 +276,7 @@ window.addEventListener('DOMContentLoaded', (event) =>{
 
 
         
-        // stickybox.draw()
+        stickybox.draw()
 
 
 
@@ -360,13 +360,13 @@ window.addEventListener('DOMContentLoaded', (event) =>{
             springs[s].move()
         }
 
-        // for(let s = 0; s<springs.length; s++){
-        //     if(stickybox.isPointInside(springs[s].anchor)){
-        //         springs[s].anchor.xmom*=-.1
-        //         springs[s].anchor.ymom*=-.1
-        //         springs[s].anchor.move()
-        //     }
-        // }
+        for(let s = 0; s<springs.length; s++){
+            if(stickybox.isPointInside(springs[s].anchor)){
+                springs[s].anchor.xmom*=-1.05
+                springs[s].anchor.ymom*=-1.05
+                springs[s].anchor.move()
+            }
+        }
         for(let s = 0; s<springs.length; s++){
             springs[s].draw()
         }
